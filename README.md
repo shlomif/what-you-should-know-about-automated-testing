@@ -1,1 +1,1 @@
-# what-you-should-know-about-automated-testing
+# What you should Know about Automated Testing
