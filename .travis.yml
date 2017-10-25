@@ -1,0 +1,15 @@
+sudo: false
+language: perl
+perl:
+    - '5.26'
+matrix:
+    allow_failures:
+        - perl: 'blead'
+    fast_finish: true
+before_install:
+    - git config --global user.name "TravisCI"
+    - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
+install:
+    - cpanm --quiet Test::TrailingSpace
+script:
+    - prove Tests/*.t
