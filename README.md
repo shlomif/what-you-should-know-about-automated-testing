@@ -56,3 +56,9 @@ assert_equal(add(-6, 5), -1, "negative outcome");
 ```
 
 And so forth. For some of these tests, the code may need to be corrected.
+
+## Links
+
+- [Best Practices question and answer](https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt)
+- [I feel naked without my test suite](http://use.perl.org/use.perl.org/_gabor/journal/15774.html) - a cautionary tale.
+- [Awesome Guidelines](https://github.com/Kristories/awesome-guidelines) - A curated list of high quality coding style conventions and standards.
