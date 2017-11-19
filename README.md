@@ -59,6 +59,8 @@ And so forth. For some of these tests, the code may need to be corrected.
 
 ## Links
 
+- [Automated Testing section](http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR) of the "Perl for Newbies" tutorials, which goes for more in-depth coverage.
 - [Best Practices question and answer](https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt)
 - [I feel naked without my test suite](http://use.perl.org/use.perl.org/_gabor/journal/15774.html) - a cautionary tale.
 - [Awesome Guidelines](https://github.com/Kristories/awesome-guidelines) - A curated list of high quality coding style conventions and standards.
+- [Discussion about best practices](https://perlhacks.com/2012/03/you-must-hate-version-control-systems/) on Dave Cross's blog.
