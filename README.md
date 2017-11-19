@@ -57,6 +57,19 @@ assert_equal(add(-6, 5), -1, "negative outcome");
 
 And so forth. For some of these tests, the code may need to be corrected.
 
+## The programming cycle
+
+Normally one can work by adding a new test to the test suite (which may
+include more than one assertion), running the test suite, and seeing it fail
+("red line") with the new test alone. Then you write the code to get the new
+test to pass and watch the test suite (including all previous tests) pass.
+("green line".) Then you commit your changes to the version control repo.
+
+After that, one can perform one or more commits of [refactoring](https://en.wikipedia.org/wiki/Code_refactoring)
+so the internal quality of the code will improve while the tests remain
+passing.
+
+
 ## Links
 
 - [Automated Testing section](http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR) of the "Perl for Newbies" tutorials, which goes for more in-depth coverage.
