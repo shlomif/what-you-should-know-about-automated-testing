@@ -26,7 +26,7 @@ variation, then it will likely be caught by the test.
 Finally, by writing tests we provide **specifications** to the code and even
 some form of API documentation, as well as examples of what we want the code
 to achieve. This causes less duplication than writing separate specification
-documents and examples, and, furthermore, is validated to be functional
+documents and examples. Moreover, the code is validated to be functional
 because we actually run it.
 
 ## An example
