@@ -46,7 +46,8 @@ We can write a test for it similar to:
 assert_equal(add(2, 2), 4, "2+2 == 4");
 ```
 
-This test will pass! But we should write more tests:
+This test will pass! However, the implementation is incomplete, so we should
+write more tests:
 
 ```
 assert_equal(add(0, 0), 0, "0+0 == 0");
@@ -55,7 +56,8 @@ assert_equal(add(1, 5), 6, "1+5 == 6");
 assert_equal(add(-6, 5), -1, "negative outcome");
 ```
 
-And so forth. For some of these tests, the code may need to be corrected.
+And so forth. To get some of these tests to pass, the code may need to be
+corrected.
 
 ## The programming cycle
 
@@ -77,5 +79,5 @@ passing.
 - [I feel naked without my test suite](http://use.perl.org/use.perl.org/_gabor/journal/15774.html) - a cautionary tale.
 - [Awesome Guidelines](https://github.com/Kristories/awesome-guidelines) - A curated list of high quality coding style conventions and standards.
 - [Discussion about best practices](https://perlhacks.com/2012/03/you-must-hate-version-control-systems/) on Dave Cross's blog.
-- [Just write the God-damn tests](http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html)
+- [“Just write the God-damn tests”](http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html)
 - [The Test Anything Protocol](https://testanything.org/) - allows for test suites written in more than one programming language.
