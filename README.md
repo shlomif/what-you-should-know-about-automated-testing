@@ -46,6 +46,10 @@ We can write a test for it similar to:
 assert_equal(add(2, 2), 4, "2+2 == 4");
 ```
 
+This makes use of a test framework’s function called `assert_equal` that may
+have the signature `function assert_equal(got_value, expected_value, test_msg)`
+which will succeed or fail if the value is equal.
+
 This test will pass! However, the implementation is incomplete, so we should
 write more tests:
 
@@ -58,6 +62,26 @@ assert_equal(add(-6, 5), -1, "negative outcome");
 
 And so forth. To get some of these tests to pass, the code may need to be
 corrected.
+
+Note that the exact syntax varies based on the automated tests framework
+that one uses, but the concept is the same almost everywhere. Moreover, there
+is nothing magical about `assert_equal()` and a sample and naïve
+implementation of it may be this:
+
+```
+function assert_equal(got_value, expected_value, test_msg)
+{
+    if (got_value == expected_value)
+    {
+        return True;
+    }
+    else
+    {
+        warn("Failed " + test_msg +"!");
+        throw TestFailure.new();
+    }
+}
+```
 
 ## The programming cycle
 
