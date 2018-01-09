@@ -10,6 +10,6 @@ before_install:
     - git config --global user.name "TravisCI"
     - git config --global user.email $HOSTNAME":not-for-mail@travis-ci.org"
 install:
-    - cpanm --quiet Test::TrailingSpace
+    - cpanm --quiet Path::Tiny Test::HTML::Tidy Test::TrailingSpace Text::Markdown
 script:
     - prove Tests/*.t
