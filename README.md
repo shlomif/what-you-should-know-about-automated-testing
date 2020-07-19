@@ -48,7 +48,8 @@ assert_equal(add(2, 2), 4, "2+2 == 4");
 
 This makes use of a test framework’s function called `assert_equal` that may
 have the signature `function assert_equal(got_value, expected_value, test_msg)`
-which will succeed or fail if the value is equal.
+which will succeed if `got_value` is equal to `expected_value`, and fail
+if it is not.
 
 This test will pass! However, the implementation is incomplete, so we should
 write more tests:
