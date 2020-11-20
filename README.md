@@ -103,6 +103,8 @@ passing.
 - [Best Practices question and answer](https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt)
 - [I feel naked without my test suite](http://use.perl.org/use.perl.org/_gabor/journal/15774.html) - a cautionary tale.
 - [Awesome Guidelines](https://github.com/Kristories/awesome-guidelines) - A curated list of high quality coding style conventions and standards.
+    - [Awesome Linters (and reformatters)](https://github.com/caramelomartins/awesome-linters)
 - [Discussion about best practices](https://perlhacks.com/2012/03/you-must-hate-version-control-systems/) on Dave Cross's blog.
 - [“Just write the God-damn tests”](http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html)
 - [The Test Anything Protocol](https://testanything.org/) - allows for test suites written in more than one programming language.
+- [“What Testing DSLs Get Wrong”](http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html) - by chromatic
