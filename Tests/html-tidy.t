@@ -3,11 +3,12 @@
 use strict;
 use warnings;
 
-use Test::HTML::Tidy tests => 1;
+use Test::HTML::T5 tests => 1;
 use Text::Markdown qw/ markdown /;
 use Path::Tiny qw/ path /;
 
-my $HTML = join('',
+my $HTML = join(
+    '',
     <<"EOF",
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE
@@ -20,14 +21,14 @@ my $HTML = join('',
 </head>
 <body>
 EOF
-    markdown( path( "./README.md" )->slurp_utf8 ),
+    markdown( path("./README.md")->slurp_utf8 ),
     <<"EOF",
 </body>
 </html>
 EOF
 );
 
-my $tidy = HTML::Tidy->new( { output_xhtml => 1, } );
+my $tidy = HTML::T5->new( { output_xhtml => 1, } );
 
 # TEST
-html_tidy_ok($tidy, $HTML, "From markdown");
+html_tidy_ok( $tidy, $HTML, "From markdown" );
