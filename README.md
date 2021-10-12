@@ -108,3 +108,4 @@ passing.
 - [“Just write the God-damn tests”](http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html)
 - [The Test Anything Protocol](https://testanything.org/) - allows for test suites written in more than one programming language.
 - [“What Testing DSLs Get Wrong”](http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html) - by chromatic
+- [“Good tests don’t change”](https://owengage.com/writing/2021-10-09-good-tests-dont-change/) (+ [Reddit discussion](https://www.reddit.com/r/programming/comments/q4ig6i/good_tests_dont_change/)) - a useful guideline.
