@@ -1,0 +1,113 @@
+= What you should Know about Automated Testing
+
+                    Shlomi
+                    Fish
+                 <shlomif@shlomifish.org>
+
+[[intro]]
+== Introduction
+
+http://en.wikipedia.org/wiki/Test_automation[Automated testing] is a software engineering method in which one writes pieces of code, which in turn help us ascertain that the production code itself is functioning correctly.
+This document provides an introduction to automated software testing. 
+
+[[motivation]]
+== Motivation
+
+So why do we want to perform automated software testing? The first reason is to **prevent bugs**.
+By writing tests before we write the production code itself (so-called **Test-First Development**) we ascertain that the production code behaves according to the specification given in the tests.
+That way, bugs that could occur, if the code was deployed right away, or tested only manually, would be prevented. 
+
+Another reason is to make sure that bugs and regressions are *not reintroduced* in the code-base.
+Say we have a bug, and we write a meaningful test that fails when the bug is still in the code, and only then fix the bug.
+In that case, we can re-use the test in the future to make sure the bug is not present in the current version of the code.
+If the bug re-surfaces in a certain variation, then it will likely be caught by the test. 
+
+Finally, by writing tests we provide *specifications* to the code and even some form of API documentation, as well as examples of what we want the code to achieve.
+This causes less duplication than writing separate specification documents and examples.
+Moreover, the code is validated to be functional because we actually run it. 
+
+[[example]]
+== An example
+
+Let's suppose we want to write a https://en.wikipedia.org/wiki/Subroutine[function] that adds two numbers.
+In pseudocode, we can write: 
+
+[source]
+----
+
+
+function add(first_number, second_number)
+{
+    return 4;
+}
+----
+
+We can write a test for it similar to: 
+
+[source]
+----
+
+
+assert_equal(add(2, 2), 4, "2+2 == 4");
+----
+
+This makes use of a test framework`'s function called `assert_equal` that may have the signature `function assert_equal(got_value, expected_value, test_msg)` which will succeed if `got_value` is equal to `expected_value`, and fail if it is not. 
+
+This test will pass! However, the implementation is incomplete, so we should write more tests: 
+
+[source]
+----
+
+
+assert_equal(add(0, 0), 0, "0+0 == 0");
+assert_equal(add(-1, 1), 0, "-1+1 == 0");
+assert_equal(add(1, 5), 6, "1+5 == 6");
+assert_equal(add(-6, 5), -1, "negative outcome");
+----
+
+And so forth.
+To get some of these tests to pass, the code may need to be corrected. 
+
+Note that the exact syntax varies based on the automated tests framework that one uses, but the concept is the same almost everywhere.
+Moreover, there is nothing magical about `assert_equal()` and a sample and naïve implementation of it may be this: 
+
+[source]
+----
+
+
+function assert_equal(got_value, expected_value, test_msg)
+{
+    if (got_value == expected_value)
+    {
+        return True;
+    }
+    else
+    {
+        warn("Failed " + test_msg +"!");
+        throw TestFailure.new();
+    }
+}
+----
+
+[[programming-cycle]]
+== The programming cycle
+
+Normally one can work by adding a new test to the test suite (which may include more than one assertion), running the test suite, and seeing it fail ("red line") with the new test alone.
+Then you write the code to get the new test to pass and watch the test suite (including all previous tests) pass.
+("green line".) Then you commit your changes to the version control repo. 
+
+After that, one can perform one or more commits of https://en.wikipedia.org/wiki/Code_refactoring[refactoring] so the internal quality of the code will improve while the tests remain passing. 
+
+[[links]]
+== Links
+
+* http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR[Automated Testing section] of the "Perl for Newbies" tutorials, which goes for more in-depth coverage. 
+* https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt[Best Practices question and answer]
+* http://use.perl.org/use.perl.org/_gabor/journal/15774.html[I feel naked without my test suite] - a cautionary tale. 
+* https://github.com/Kristories/awesome-guidelines[Awesome Guidelines] - A curated list of high quality coding style conventions and standards. 
+** https://github.com/caramelomartins/awesome-linters[Awesome Linters (and reformatters)]
+* https://perlhacks.com/2012/03/you-must-hate-version-control-systems/[Discussion about best practices] on Dave Cross's blog. 
+* http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html["`Just write the God-damn tests`"]
+* https://testanything.org/[The Test Anything Protocol] - allows for test suites written in more than one programming language. 
+* http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html["`What Testing DSLs Get Wrong`"] - by chromatic 
+* https://owengage.com/writing/2021-10-09-good-tests-dont-change/["`Good tests don`'t change`"] (+ https://www.reddit.com/r/programming/comments/q4ig6i/good_tests_dont_change/[Reddit discussion]) - a useful guideline. 
