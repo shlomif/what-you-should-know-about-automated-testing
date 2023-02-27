@@ -23,7 +23,7 @@ docbook5:
 	asciidoctor -b docbook5 ./multiverse-cosmology-v0.4.x.asciidoc -o multiverse-cosmology-v0.4.x.db5.xml
 
 README.asciidoc: what-you-should-know-about-automated-testing.docbook5.xml
-	perl render-cosmology.pl
+	perl render.pl
 	git add $@
 	git add -u .
 
@@ -34,5 +34,6 @@ what-you-should-know-about-automated-testing.docbook5.xml: what-you-should-know-
 	tpage $< > $@
 
 # render: multiverse-cosmology-v0.4.x.asciidoc
+render: README.asciidoc
 render: what-you-should-know-about-automated-testing/all-in-one.xhtml.temp.xml.xhtml
 
