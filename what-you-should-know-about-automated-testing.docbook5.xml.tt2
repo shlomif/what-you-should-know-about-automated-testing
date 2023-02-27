@@ -91,20 +91,24 @@ because we actually run it.
 Let's suppose we want to write a <link xlink:href="https://en.wikipedia.org/wiki/Subroutine">function</link> that adds two numbers. In pseudocode, we can write:
 </para>
 
-```
+<programlisting>
+<![CDATA[
 function add(first_number, second_number)
 {
     return 4;
 }
-```
+]]>
+</programlisting>
 
 <para>
 We can write a test for it similar to:
 </para>
 
-```
+<programlisting>
+<![CDATA[
 assert_equal(add(2, 2), 4, "2+2 == 4");
-```
+]]>
+</programlisting>
 
 <para>
 This makes use of a test framework’s function called `assert_equal` that may
@@ -118,12 +122,14 @@ This test will pass! However, the implementation is incomplete, so we should
 write more tests:
 </para>
 
-```
+<programlisting>
+<![CDATA[
 assert_equal(add(0, 0), 0, "0+0 == 0");
 assert_equal(add(-1, 1), 0, "-1+1 == 0");
 assert_equal(add(1, 5), 6, "1+5 == 6");
 assert_equal(add(-6, 5), -1, "negative outcome");
-```
+]]>
+</programlisting>
 
 <para>
 And so forth. To get some of these tests to pass, the code may need to be
@@ -137,7 +143,8 @@ is nothing magical about `assert_equal()` and a sample and naïve
 implementation of it may be this:
 </para>
 
-```
+<programlisting>
+<![CDATA[
 function assert_equal(got_value, expected_value, test_msg)
 {
     if (got_value == expected_value)
@@ -150,7 +157,8 @@ function assert_equal(got_value, expected_value, test_msg)
         throw TestFailure.new();
     }
 }
-```
+]]>
+</programlisting>
 
 </section>
 
