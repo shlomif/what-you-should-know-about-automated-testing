@@ -164,18 +164,83 @@ After that, one can perform one or more commits of <link xlink:href="https://en.
 so the internal quality of the code will improve while the tests remain
 passing.
 </para>
+<section xml:id="links">
 
-## Links
+<info>
+<title>Links</title>
+</info>
 
-- <link xlink:href="http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR">Automated Testing section</link> of the "Perl for Newbies" tutorials, which goes for more in-depth coverage.
-- <link xlink:href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt">Best Practices question and answer</link>
-- <link xlink:href="http://use.perl.org/use.perl.org/_gabor/journal/15774.html">I feel naked without my test suite</link> - a cautionary tale.
-- <link xlink:href="https://github.com/Kristories/awesome-guidelines">Awesome Guidelines</link> - A curated list of high quality coding style conventions and standards.
-    - <link xlink:href="https://github.com/caramelomartins/awesome-linters">Awesome Linters (and reformatters)</link>
-- <link xlink:href="https://perlhacks.com/2012/03/you-must-hate-version-control-systems/">Discussion about best practices</link> on Dave Cross's blog.
-- <link xlink:href="http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html">“Just write the God-damn tests”</link>
-- <link xlink:href="https://testanything.org/">The Test Anything Protocol</link> - allows for test suites written in more than one programming language.
-- <link xlink:href="http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html">“What Testing DSLs Get Wrong”</link> - by chromatic
-- <link xlink:href="https://owengage.com/writing/2021-10-09-good-tests-dont-change/">“Good tests don’t change”</link> (+ <link xlink:href="https://www.reddit.com/r/programming/comments/q4ig6i/good_tests_dont_change/">Reddit discussion</link>) - a useful guideline.
+<itemizedlist>
+
+
+<listitem>
+<para>
+<link xlink:href="http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR">Automated Testing section</link> of the "Perl for Newbies" tutorials, which goes for more in-depth coverage.
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt">Best Practices question and answer</link>
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="http://use.perl.org/use.perl.org/_gabor/journal/15774.html">I feel naked without my test suite</link> - a cautionary tale.
+</para>
+</listitem>
+
+<listitem>
+
+<para>
+<link xlink:href="https://github.com/Kristories/awesome-guidelines">Awesome Guidelines</link> - A curated list of high quality coding style conventions and standards.
+</para>
+
+<itemizedlist>
+
+<listitem>
+<para>
+<link xlink:href="https://github.com/caramelomartins/awesome-linters">Awesome Linters (and reformatters)</link>
+</para>
+</listitem>
+
+</itemizedlist>
+
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="https://perlhacks.com/2012/03/you-must-hate-version-control-systems/">Discussion about best practices</link> on Dave Cross's blog.
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html">“Just write the God-damn tests”</link>
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="https://testanything.org/">The Test Anything Protocol</link> - allows for test suites written in more than one programming language.
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html">“What Testing DSLs Get Wrong”</link> - by chromatic
+</para>
+</listitem>
+
+<listitem>
+<para>
+<link xlink:href="https://owengage.com/writing/2021-10-09-good-tests-dont-change/">“Good tests don’t change”</link> (+ <link xlink:href="https://www.reddit.com/r/programming/comments/q4ig6i/good_tests_dont_change/">Reddit discussion</link>) - a useful guideline.
+</para>
+</listitem>
+
+</itemizedlist>
+
+</section>
 
 </article>
