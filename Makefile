@@ -31,18 +31,8 @@ what-you-should-know-about-automated-testing/all-in-one.xhtml.temp.xml.xhtml: wh
 	docmake -v --stringparam "docbook.css.source=" --stringparam "root.filename=all-in-one.xhtml.temp.xml" --basepath /usr/share/sgml/docbook/xsl-ns-stylesheets -x "$${homepage:-$$HOME/Docs/homepage/homepage/trunk/}"/lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl -o $@ xhtml5 $<
 
 what-you-should-know-about-automated-testing.docbook5.xml: what-you-should-know-about-automated-testing.docbook5.xml.tt2
-	ttpage -o $@ $<
+	tpage $< > $@
 
 # render: multiverse-cosmology-v0.4.x.asciidoc
 render: what-you-should-know-about-automated-testing/all-in-one.xhtml.temp.xml.xhtml
 
-why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.asciidoc: why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.docbook5.xml
-	perl render-cosmology.pl
-	git add $@
-	git add -u .
-
-why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.xhtml/all-in-one.xhtml.temp.xml.xhtml: why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.docbook5.xml
-	docmake -v --stringparam "docbook.css.source=" --stringparam "root.filename=all-in-one.xhtml.temp.xml" --basepath /usr/share/sgml/docbook/xsl-ns-stylesheets -x "$${homepage:-$$HOME/Docs/homepage/homepage/trunk/}"/lib/sgml/shlomif-docbook/xsl-5-stylesheets/shlomif-essays-5-xhtml-onechunk.xsl -o $@ xhtml5 $<
-
-render: why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.asciidoc
-render: why-the-so-called-real-world-i-am-trapped-in-makes-little-sense--2020-05-19.xhtml/all-in-one.xhtml.temp.xml.xhtml
