@@ -13,9 +13,7 @@ upload: render
 TECH_TIPS_OUT = temp/tech-tips-out.xhtml
 
 test: all
-	perl extract-tech-tips.pl --file=old-tech-diary.xhtml --file tech-diary.xhtml --output $(TECH_TIPS_OUT) --wrap
-	cp -f aggregate-tips--2020-05-03.xhtml temp/
-	prove t/*.{py,t}
+	prove Tests/*.t
 
 check: test
 
