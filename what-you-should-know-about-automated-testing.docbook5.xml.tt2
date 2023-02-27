@@ -1,0 +1,181 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<?xml-stylesheet href="docbook-css/driver.css" type="text/css"?>
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="index" xml:lang="en">
+    <info>
+        <title>What you should Know about Automated Testing</title>
+        <authorgroup>
+            <author>
+                <personname>
+                    <firstname>Shlomi</firstname>
+                    <surname>Fish</surname>
+                </personname>
+                <affiliation>
+                    <address>
+                        <email>shlomif@shlomifish.org</email>
+                        <uri type="homepage" xlink:href="http://www.shlomifish.org/">Shlomi Fish’s Homepage</uri>
+                    </address>
+                </affiliation>
+            </author>
+        </authorgroup>
+        <copyright>
+            <year>2008</year>
+            <holder>Shlomi Fish</holder>
+        </copyright>
+        <legalnotice xml:id="main_legal_notice">
+            <para>
+                <!--Creative Commons License-->
+                This work is licensed under the <link xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</link> (or at your option any greater version of it).
+            </para>
+        </legalnotice>
+
+        <revhistory>
+
+        </revhistory>
+    </info>
+
+<section xml:id="intro">
+
+<info>
+<title>Introduction</title>
+</info>
+
+<para>
+<link xlink:href="http://en.wikipedia.org/wiki/Test_automation">Automated testing</link>
+is a software engineering method in which one writes pieces of code, which
+in turn help us ascertain that the production code itself is functioning
+correctly. This document provides an introduction to automated software testing.
+</para>
+
+</section>
+
+<section xml:id="motivation">
+
+<info>
+<title>Motivation</title>
+</info>
+
+<para>
+So why do we want to perform automated software testing? The
+first reason is to **prevent bugs**. By writing tests before we write the
+production code itself (so-called <b>Test-First Development</b>) we ascertain
+that the production code behaves according to the specification given in the
+tests. That way, bugs that could occur, if the code was deployed right away, or
+tested only manually, would be prevented.
+</para>
+
+<para>
+Another reason is to make sure that bugs and regressions are **not
+reintroduced** in the code-base.  Say we have a bug, and we write a meaningful
+test that fails when the bug is still in the code, and only then fix the bug.
+In that case, we can re-use the test in the future to make sure the bug is not
+present in the current version of the code. If the bug re-surfaces in a certain
+variation, then it will likely be caught by the test.
+</para>
+
+<para>
+Finally, by writing tests we provide **specifications** to the code and even
+some form of API documentation, as well as examples of what we want the code
+to achieve. This causes less duplication than writing separate specification
+documents and examples. Moreover, the code is validated to be functional
+because we actually run it.
+</para>
+
+</section>
+
+## An example
+
+<para>
+Let's suppose we want to write a <link xlink:href="https://en.wikipedia.org/wiki/Subroutine">function</link> that adds two numbers. In pseudocode, we can write:
+</para>
+
+```
+function add(first_number, second_number)
+{
+    return 4;
+}
+```
+
+<para>
+We can write a test for it similar to:
+</para>
+
+```
+assert_equal(add(2, 2), 4, "2+2 == 4");
+```
+
+<para>
+This makes use of a test framework’s function called `assert_equal` that may
+have the signature `function assert_equal(got_value, expected_value, test_msg)`
+which will succeed if `got_value` is equal to `expected_value`, and fail
+if it is not.
+</para>
+
+<para>
+This test will pass! However, the implementation is incomplete, so we should
+write more tests:
+</para>
+
+```
+assert_equal(add(0, 0), 0, "0+0 == 0");
+assert_equal(add(-1, 1), 0, "-1+1 == 0");
+assert_equal(add(1, 5), 6, "1+5 == 6");
+assert_equal(add(-6, 5), -1, "negative outcome");
+```
+
+<para>
+And so forth. To get some of these tests to pass, the code may need to be
+corrected.
+</para>
+
+<para>
+Note that the exact syntax varies based on the automated tests framework
+that one uses, but the concept is the same almost everywhere. Moreover, there
+is nothing magical about `assert_equal()` and a sample and naïve
+implementation of it may be this:
+</para>
+
+```
+function assert_equal(got_value, expected_value, test_msg)
+{
+    if (got_value == expected_value)
+    {
+        return True;
+    }
+    else
+    {
+        warn("Failed " + test_msg +"!");
+        throw TestFailure.new();
+    }
+}
+```
+
+## The programming cycle
+
+<para>
+Normally one can work by adding a new test to the test suite (which may
+include more than one assertion), running the test suite, and seeing it fail
+("red line") with the new test alone. Then you write the code to get the new
+test to pass and watch the test suite (including all previous tests) pass.
+("green line".) Then you commit your changes to the version control repo.
+</para>
+
+<para>
+After that, one can perform one or more commits of <link xlink:href="https://en.wikipedia.org/wiki/Code_refactoring">refactoring</link>
+so the internal quality of the code will improve while the tests remain
+passing.
+</para>
+
+## Links
+
+- <link xlink:href="http://perl-begin.org/tutorials/perl-for-newbies/part5/#page--testing--DIR">Automated Testing section</link> of the "Perl for Newbies" tutorials, which goes for more in-depth coverage.
+- <link xlink:href="https://github.com/shlomif/Freenode-programming-channel-FAQ/blob/master/FAQ.mdwn#what-are-some-best-practices-in-programming-that-i-should-adopt">Best Practices question and answer</link>
+- <link xlink:href="http://use.perl.org/use.perl.org/_gabor/journal/15774.html">I feel naked without my test suite</link> - a cautionary tale.
+- <link xlink:href="https://github.com/Kristories/awesome-guidelines">Awesome Guidelines</link> - A curated list of high quality coding style conventions and standards.
+    - <link xlink:href="https://github.com/caramelomartins/awesome-linters">Awesome Linters (and reformatters)</link>
+- <link xlink:href="https://perlhacks.com/2012/03/you-must-hate-version-control-systems/">Discussion about best practices</link> on Dave Cross's blog.
+- <link xlink:href="http://blogs.perl.org/users/shlomi_fish/2013/02/essay-just-write-the-god-damn-tests-motherfucker.html">“Just write the God-damn tests”</link>
+- <link xlink:href="https://testanything.org/">The Test Anything Protocol</link> - allows for test suites written in more than one programming language.
+- <link xlink:href="http://www.modernperlbooks.com/mt/2012/04/what-testing-dsls-get-wrong.html">“What Testing DSLs Get Wrong”</link> - by chromatic
+- <link xlink:href="https://owengage.com/writing/2021-10-09-good-tests-dont-change/">“Good tests don’t change”</link> (+ <link xlink:href="https://www.reddit.com/r/programming/comments/q4ig6i/good_tests_dont_change/">Reddit discussion</link>) - a useful guideline.
+
+</article>
