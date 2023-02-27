@@ -149,7 +149,14 @@ function assert_equal(got_value, expected_value, test_msg)
 }
 ```
 
-## The programming cycle
+
+<section xml:id="programming-cycle">
+
+<info>
+<title>The programming cycle</title>
+</info>
+
+</section>
 
 <para>
 Normally one can work by adding a new test to the test suite (which may
@@ -164,6 +171,9 @@ After that, one can perform one or more commits of <link xlink:href="https://en.
 so the internal quality of the code will improve while the tests remain
 passing.
 </para>
+
+</section>
+
 <section xml:id="links">
 
 <info>
