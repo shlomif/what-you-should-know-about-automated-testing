@@ -1,37 +1,41 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <?xml-stylesheet href="docbook-css/driver.css" type="text/css"?>
 <article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="index" xml:lang="en">
-    <info>
-        <title>What you should Know about Automated Testing</title>
-        <authorgroup>
-            <author>
-                <personname>
-                    <firstname>Shlomi</firstname>
-                    <surname>Fish</surname>
-                </personname>
-                <affiliation>
-                    <address>
-                        <email>shlomif@shlomifish.org</email>
-                        <uri type="homepage" xlink:href="http://www.shlomifish.org/">Shlomi Fish’s Homepage</uri>
-                    </address>
-                </affiliation>
-            </author>
-        </authorgroup>
-        <copyright>
-            <year>2008</year>
-            <holder>Shlomi Fish</holder>
-        </copyright>
-        <legalnotice xml:id="main_legal_notice">
-            <para>
-                <!--Creative Commons License-->
-                This work is licensed under the <link xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</link> (or at your option any greater version of it).
-            </para>
-        </legalnotice>
 
-        <revhistory>
+<info>
 
-        </revhistory>
-    </info>
+<title>What you should Know about Automated Testing</title>
+
+<authorgroup>
+<author>
+<personname>
+<firstname>Shlomi</firstname>
+<surname>Fish</surname>
+</personname>
+<affiliation>
+<address>
+<email>shlomif@shlomifish.org</email>
+<uri type="homepage" xlink:href="http://www.shlomifish.org/">Shlomi Fish’s Homepage</uri>
+</address>
+</affiliation>
+</author>
+</authorgroup>
+<copyright>
+<year>2008</year>
+<holder>Shlomi Fish</holder>
+</copyright>
+<legalnotice xml:id="main_legal_notice">
+<para>
+<!--Creative Commons License-->
+This work is licensed under the <link xlink:href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</link> (or at your option any greater version of it).
+</para>
+</legalnotice>
+
+<revhistory>
+
+</revhistory>
+
+</info>
 
 <section xml:id="intro">
 

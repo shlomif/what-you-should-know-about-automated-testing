@@ -1,8 +1,8 @@
 = What you should Know about Automated Testing
 
-                    Shlomi
-                    Fish
-                 <shlomif@shlomifish.org>
+Shlomi
+Fish
+ <shlomif@shlomifish.org>
 
 [[intro]]
 == Introduction
