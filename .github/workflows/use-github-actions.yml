@@ -8,7 +8,7 @@ jobs:
             -   run: sudo apt-get --no-install-recommends install -y eatmydata
             -   run: sudo eatmydata apt-get --no-install-recommends install -y ack-grep asciidoc build-essential cmake cmake-data cookiecutter cpanminus dbtoepub docbook-defguide docbook-xsl docbook-xsl-ns docbook5-xml golang hunspell hunspell-en-gb libapr1-dev libc6-dbg libcmocka-dev libdb5.3-dev libgd-dev libgdbm-compat-dev libgdbm-dev libgmp-dev libhunspell-dev libncurses-dev libpcre3-dev libperl-dev libtidy-dev libxml2-dev libxslt1-dev lynx myspell-he nodejs npm perl pysassc python3 python3-pip python3-setuptools rsync ruby ruby-dev strip-nondeterminism tidy valgrind vim xsltproc xz-utils zip
             -   run: sudo bash -x -e -c 'export CPATH="${CPATH}:/usr/include/tidy" ; cpanm HTML::T5 '
-            -   run: sudo cpanm App::Docmake Path::Tiny Template Test::HTML::T5 Test::TrailingSpace Text::Markdown
+            -   run: sudo cpanm App::Docmake Path::Tiny Template Test::HTML::T5 Test::TrailingSpace
             -   run: sudo gem install bundler
             -   run: export homepage="`pwd`" ;  perl bin/my-cookiecutter.pl && make test
         timeout-minutes: 10
