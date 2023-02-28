@@ -7,6 +7,7 @@ jobs:
             -   run: sudo apt-get -y remove libgd3 libunwind-14 nginx
             -   run: sudo apt-get --no-install-recommends install -y eatmydata
             -   run: sudo eatmydata apt-get --no-install-recommends install -y ack-grep asciidoc build-essential cmake cmake-data cpanminus dbtoepub docbook-defguide docbook-xsl docbook-xsl-ns docbook5-xml fortune-mod golang gperf graphicsmagick hspell hunspell hunspell-en-gb inkscape libapr1-dev libc6-dbg libcmocka-dev libdb5.3-dev libgd-dev libgdbm-compat-dev libgdbm-dev libgmp-dev libgoogle-perftools-dev libhunspell-dev libncurses-dev libpcre3-dev libperl-dev libtidy-dev libxml2-dev libxslt1-dev lynx mercurial myspell-he nodejs npm optipng perl pysassc python3 python3-numpy python3-pip python3-setuptools rsync ruby ruby-dev silversearcher-ag strip-nondeterminism tidy valgrind vim wml xsltproc xvfb xz-utils zip
+            -   run: cpanm --notest Test::HTML::T5
             -   run: cpanm App::Docmake Path::Tiny Test::HTML::T5 Test::TrailingSpace Text::Markdown
             -   run: make test
         timeout-minutes: 60
