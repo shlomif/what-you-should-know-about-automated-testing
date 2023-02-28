@@ -3,7 +3,7 @@ all: render
 SHELL = /bin/bash
 
 test: all
-	prove Tests/*.t
+	prove tests-dir/*.t
 
 check: test
 
