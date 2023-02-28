@@ -10,7 +10,7 @@ jobs:
             -   run: sudo bash -x -e -c 'export CPATH="${CPATH}:/usr/include/tidy" ; cpanm HTML::T5 '
             -   run: sudo cpanm App::Docmake Path::Tiny Template Test::HTML::T5 Test::TrailingSpace Text::Markdown
             -   run: sudo gem install bundler
-            -   run: make test
+            -   run: export homepage="`pwd`" ;  perl bin/my-cookiecutter.pl && make test
         timeout-minutes: 60
 name: use-github-actions
 'on':
