@@ -1,5 +1,5 @@
 jobs:
-    test-site-build:
+    test-doc-build:
         runs-on: ubuntu-latest
         steps:
             -   uses: actions/checkout@v2
@@ -11,7 +11,7 @@ jobs:
             -   run: sudo cpanm App::Docmake Path::Tiny Template Test::HTML::T5 Test::TrailingSpace Text::Markdown
             -   run: sudo gem install bundler
             -   run: export homepage="`pwd`" ;  perl bin/my-cookiecutter.pl && make test
-        timeout-minutes: 60
+        timeout-minutes: 10
 name: use-github-actions
 'on':
 - push
